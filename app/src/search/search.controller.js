@@ -12,7 +12,9 @@
  * Controller of the hackApp for Searchs page
  */
 hackApp.controller('SearchCtrl', ['$scope', 'SearchService', function($scope, SearchService) {
-  SearchService.getList().then(function(res) {
+  SearchService.customPOST({query: {query_string: {query: 'black car'}}}).then(function(res) {
     $scope.answer = res;
   });
+
+  // SearchService.customPOST('_search', {query: {match: {message: 'this is a test'}}});
 }]);
