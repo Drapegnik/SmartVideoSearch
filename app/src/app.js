@@ -18,7 +18,8 @@ var hackApp = angular
     'ngSanitize',
     'ngTouch',
     'ui.router',
-    'restangular'
+    'restangular',
+    'angucomplete-alt'
   ]);
 
 hackApp.config(['RestangularProvider', 'elasticUrl', function(RestangularProvider, elasticUrl) {
