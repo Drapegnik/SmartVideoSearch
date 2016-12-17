@@ -12,9 +12,4 @@
  * Controller of the hackApp for home page
  */
 hackApp.controller('HomeCtrl', function() {
-  this.awesomeThings = [
-    'HTML5 Boilerplate',
-    'AngularJS',
-    'Karma'
-  ];
 });

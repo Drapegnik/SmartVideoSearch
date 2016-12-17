@@ -21,6 +21,6 @@ var hackApp = angular
     'restangular'
   ]);
 
-hackApp.config(['RestangularProvider', 'apiUrl', function(RestangularProvider, apiUrl) {
-  RestangularProvider.setBaseUrl(apiUrl);
+hackApp.config(['RestangularProvider', 'elasticUrl', function(RestangularProvider, elasticUrl) {
+  RestangularProvider.setBaseUrl(elasticUrl);
 }]);
