@@ -11,10 +11,21 @@
  * # HomeCtrl
  * Controller of the hackApp for home page
  */
-hackApp.controller('HomeCtrl', function($scope) {
-  $scope.data = [{'name': 'A'}, {'name': 'B'}, {'name': 'C'}, {'name': 'D'}];
+hackApp.controller('HomeCtrl', function($scope, Restangular, apiUrl) {
+  $scope.searchUrl = apiUrl + 'search/';
+  $scope.query = '';
+  $scope.results = [];
 
-  $scope.select = function(item) {
-    console.log(item);
+  $scope.convertTime = function(secs) {
+    return new Date(1000 * secs);
+  };
+
+  $scope.doSearch = function() {
+    console.log($scope.query);
+
+    Restangular.oneUrl('search/' + $scope.query).get().then(function(res) {
+      console.log(res);
+      $scope.results = res;
+    });
   };
 });

@@ -1,13 +1,14 @@
-<p>Hello {{hello}}</p>
+<div class="row">
+  <div class="col-md-10 col-xs-6 form-group">
+    <input ng-model="query" type="text" class="form-control" placeholder="Search video">
+  </div>
+  <button ng-click="doSearch()" class="col-md-2 col-xs-2 btn btn-default">Search</button>
+</div>
 
-<angucomplete-alt id="ex1"
-                  placeholder="Search video"
-                  pause="100"
-                  selected-object="select"
-                  local-data="data"
-                  search-fields="name"
-                  title-field="name"
-                  minlength="1"
-                  template-url="/template.html"
-                  input-class="form-control form-control-small"/>
-<br>
+<div class="row searchResult" ng-repeat="result in results" ng-click="selectResult(result)">
+  <img class="col-md-6 col-xs-6" src="{{'images/'+ result.frame_path}}">
+  <div class="col-md-6 col-xs-6">
+    <p>{{result.text}}</p>
+    <p>was found at {{convertTime(result.frame_sec) | date: 'mm:ss'}}</p>
+  </div>
+</div>
