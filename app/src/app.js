@@ -22,6 +22,6 @@ var hackApp = angular
     'angucomplete-alt'
   ]);
 
-hackApp.config(['RestangularProvider', 'elasticUrl', function(RestangularProvider, elasticUrl) {
-  RestangularProvider.setBaseUrl(elasticUrl);
+hackApp.config(['RestangularProvider', 'apiUrl', function(RestangularProvider, apiUrl) {
+  RestangularProvider.setBaseUrl(apiUrl);
 }]);

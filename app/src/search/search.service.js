@@ -11,6 +11,8 @@
  * # SearchService
  * Search service wrap on rest angular method for api
  */
-hackApp.factory('SearchService', ['Restangular', function(Restangular, elasticUrl) {
-  return Restangular.oneUrl('/hackaton/_search', elasticUrl);
+hackApp.factory('SearchService', ['Restangular', 'elasticUrl', function(Restangular, elasticUrl) {
+  return (Restangular.withConfig(function(RestangularConfigurer) {
+    RestangularConfigurer.setBaseUrl(elasticUrl);
+  })).oneUrl('/hackaton/_search');
 }]);

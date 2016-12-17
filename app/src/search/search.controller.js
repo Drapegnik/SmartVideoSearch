@@ -11,10 +11,12 @@
  * # SearchCtrl
  * Controller of the hackApp for Searchs page
  */
-hackApp.controller('SearchCtrl', ['$scope', 'SearchService', function($scope, SearchService) {
+hackApp.controller('SearchCtrl', ['$scope', 'SearchService', 'Restangular', function($scope, SearchService, Restangular) {
   SearchService.customPOST({query: {query_string: {query: 'black car'}}}).then(function(res) {
-    $scope.answer = res;
+    $scope.elastic = res;
   });
 
-  // SearchService.customPOST('_search', {query: {match: {message: 'this is a test'}}});
+  Restangular.oneUrl('/').get().then(function(res) {
+    $scope.flask = res;
+  });
 }]);
