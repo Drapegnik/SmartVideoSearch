@@ -1,7 +1,8 @@
+'use strict';
+
 /**
  * Created by Drapegnik on 17.12.16.
  */
-'use strict';
 
 hackApp.directive('ngEnter', function() {
   return function(scope, element, attrs) {
@@ -14,5 +15,15 @@ hackApp.directive('ngEnter', function() {
         event.preventDefault();
       }
     });
+  };
+});
+
+hackApp.directive('repeatDone', function() {
+  return function(scope, element, attrs) {
+    if (scope.$last) { // all are rendered
+      console.log(element);
+      console.log("last");
+      scope.$eval(attrs.repeatDone);
+    }
   };
 });

@@ -14,7 +14,8 @@
     "angular-ui-router": "^0.3.1",
     "bootstrap-sass-official": "^3.2.0",
     "restangular": "^1.5.2",
-    "angucomplete-alt": "^2.5.0"
+    "angucomplete-alt": "^2.5.0",
+    "gojs": "^1.6.21"
   },
   "devDependencies": {},
   "appPath": "app",

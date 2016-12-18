@@ -1,14 +1,21 @@
 <div class="row">
   <div class="col-md-10 col-xs-6 form-group">
-    <input ng-enter="doSearch()" ng-change="doSearch()" ng-model="query" type="text" class="form-control" placeholder="Search video">
+    <input ng-enter="doSearch()" ng-model="query" type="text" class="form-control"
+           placeholder="Search video"> //ng-change="doSearch()"
   </div>
   <button ng-click="doSearch()" class="col-md-2 col-xs-2 btn btn-default">Search</button>
 </div>
 
-<div class="row searchResult" ng-repeat="result in results" ng-click="selectResult(result)">
-  <img class="col-md-6 col-xs-6" src="{{'images/'+ result.frames[0].frame_path}}">
-  <div class="col-md-6 col-xs-6">
-    <p>{{result.frames[0].text}}</p>
-    <p>was found at {{convertTime(result.frames[0].frame_sec) | date: 'mm:ss'}}</p>
-  </div>
+<div class="row searchResult" ng-repeat="result in results" ng-click="selectResult(result)" repeat-done="draw()">
+  <!--<img class="col-md-6 col-xs-6" src="{{'images/'+ result.frames[0].frame_path}}">-->
+  <!--<div class="col-md-6 col-xs-6">-->
+  <!--<p>{{result.frames[0].text}}</p>-->
+  <!--<p>was found at {{convertTime(result.frames[0].frame_sec) | date: 'mm:ss'}}</p>-->
+  <!--</div>-->
+  <div id="{{'preview' + $index}}" class="col-md-6 col-xs-6"></div>
+  <div id="{{'diagram' + $index}}" class="diagram col-md-6 col-xs-6"></div>
+  <pre>{{'diagram' + $index}}</pre>
 </div>
+
+<div id="myDiagramDiv" class="diagram col-md-12 col-xs-12"></div>
+<div id="infoBoxHolder" class="preview"></div>
