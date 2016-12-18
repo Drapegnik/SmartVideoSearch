@@ -1,4 +1,4 @@
-# SmartVideoSearch
+# :mag: SmartVideoSearch
 
 Web application for smart search on pre-build text index with semantic video description that was extracted with neural net
 
