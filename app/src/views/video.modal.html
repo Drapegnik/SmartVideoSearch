@@ -4,7 +4,7 @@
 <div class="modal-body" id="modal-body">
   <div ng-show="videoLoaded" class="col-md-offset-1">
     <video ng-onload="loaded()" id="video" width="640" height="360" controls>
-      <source src="{{'videos/'+videoUrl}}" type="{{videoExt}}"/>
+      <source src="{{'videos/'+videoUrl}}"/>
       Your browser does not support the video tag.
     </video>
   </div>
