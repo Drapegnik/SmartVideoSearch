@@ -1,14 +1,21 @@
 <div class="row">
   <div class="col-md-10 col-xs-6 form-group">
-    <input ng-enter="doSearch()" ng-change="doSearch()" ng-model="query" type="text" class="form-control" placeholder="Search video">
+    <input ng-enter="doSearch()" ng-change="doSearch()" ng-model="query" type="text" class="form-control"
+           placeholder="Search video">
   </div>
   <button ng-click="doSearch()" class="col-md-2 col-xs-2 btn btn-default">Search</button>
 </div>
 
 <div class="row searchResult" ng-repeat="result in results" ng-click="selectResult(result)">
-  <img class="col-md-6 col-xs-6" src="{{'images/'+ result.frames[0].frame_path}}">
-  <div class="col-md-6 col-xs-6">
-    <p>{{result.frames[0].text}}</p>
-    <p>was found at {{convertTime(result.frames[0].frame_sec) | date: 'mm:ss'}}</p>
+  <div>
+    <h3 class="col-md-12 col-xs-12">{{$index+1}}: {{result.vid_path}}</h3>
+  </div>
+  <div ng-repeat="frame in result.frames">
+      <img class="col-md-3 col-xs-3" src="{{'images/'+ frame.frame_path}}">
+
+    <!--<div class="col-md-6 col-xs-6">-->
+    <!--<p>{{result.frames[0].text}}</p>-->
+    <!--<p>was found at {{convertTime(result.frames[0].frame_sec) | date: 'mm:ss'}}</p>-->
+    <!--</div>-->
   </div>
 </div>
