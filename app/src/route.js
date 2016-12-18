@@ -21,11 +21,6 @@ hackApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
       templateUrl: 'src/views/about.view.html',
       controller: 'EmptyCtrl'
     })
-    .state('base.contacts', {
-      url: '/contacts',
-      templateUrl: 'src/views/contacts.view.html',
-      controller: 'EmptyCtrl'
-    })
     .state('base.search', {
       url: '/search',
       templateUrl: 'src/search/search.view.html',

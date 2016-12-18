@@ -5,5 +5,5 @@
  */
 
 // hackApp.constant('apiUrl', 'http://localhost:5000/');
-hackApp.constant('apiUrl', 'http://100.95.255.141:5000/');
-hackApp.constant('elasticUrl', 'http://100.95.255.141:9200/');
+hackApp.constant('apiUrl', 'http://100.95.255.23:5000/');
+hackApp.constant('elasticUrl', 'http://100.95.255.23:9200/');
