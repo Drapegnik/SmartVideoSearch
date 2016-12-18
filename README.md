@@ -2,6 +2,13 @@
 
 Web application for smart search on pre-build text index with semantic video description that was extracted with neural net
 
+## demo
+
+[![ScreenShot](http://res.cloudinary.com/dzsjwgjii/image/upload/v1482098941/smart-video-search-3.png)](https://youtu.be/Reno6eurbxg)
+
+[![ScreenShot](http://res.cloudinary.com/dzsjwgjii/image/upload/v1482098794/smart-video-search-2.png)](https://youtu.be/iiCt_-4yxIU)
+
+
 ## Build & development
 
 ### requirments
