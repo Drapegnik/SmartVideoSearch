@@ -18,6 +18,7 @@ var hackApp = angular
     'ngSanitize',
     'ngTouch',
     'ui.router',
+    'ui.bootstrap',
     'restangular',
     'angucomplete-alt'
   ]);

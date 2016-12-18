@@ -11,7 +11,7 @@
  * # HomeCtrl
  * Controller of the hackApp for home page
  */
-hackApp.controller('HomeCtrl', function($scope, Restangular, apiUrl) {
+hackApp.controller('HomeCtrl', function($scope, $uibModal, Restangular, apiUrl) {
   $scope.searchUrl = apiUrl + 'search/';
   $scope.query = '';
   $scope.results = [];
@@ -34,5 +34,24 @@ hackApp.controller('HomeCtrl', function($scope, Restangular, apiUrl) {
 
   $scope.selectFrame = function(resInd, frameInd) {
     $scope.selectedFrames[resInd] = frameInd;
+  };
+
+  $scope.open = function(frame) {
+    $uibModal.open({
+      animation: true,
+      templateUrl: 'src/views/video.modal.html',
+      size: 'md',
+      scope: $scope,
+      controller: function($scope, $uibModalInstance) {
+        $scope.cancel = function() {
+          $uibModalInstance.dismiss('cancel');
+        };
+      },
+      resolve: {
+        frame: function() {
+          return frame;
+        }
+      }
+    });
   };
 });
