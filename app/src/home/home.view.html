@@ -18,7 +18,7 @@
   <div class="col-md-6 col-xs-6">
     <div class="row">
       <span class="col-md-7 col-xs-7">Frame #{{selectedFrames[$index]+1}} was found at <b>{{convertTime(result.frames[selectedFrames[$index]].frame_sec) | date: 'mm:ss'}}</b></span>
-      <a class="btn btn-primary" ng-click="open(result.frames[selectedFrames[$index]])">
+      <a class="btn btn-primary" ng-click="open(result.frames[selectedFrames[$index]], result.vid_path)">
         <span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span>Play video
       </a>
     </div>

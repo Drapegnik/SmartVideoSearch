@@ -16,3 +16,15 @@ hackApp.directive('ngEnter', function() {
     });
   };
 });
+
+hackApp.directive('ngOnload', function() {
+  return function(scope, element, attrs) {
+    element.bind('loadedmetadata', function(event) {
+      scope.$apply(function() {
+        scope.$eval(attrs.ngOnload);
+      });
+
+      event.preventDefault();
+    });
+  };
+});

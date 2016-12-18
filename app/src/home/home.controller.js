@@ -36,21 +36,27 @@ hackApp.controller('HomeCtrl', function($scope, $uibModal, Restangular, apiUrl) 
     $scope.selectedFrames[resInd] = frameInd;
   };
 
-  $scope.open = function(frame) {
+  $scope.open = function(frame, videoUrl) {
     $uibModal.open({
       animation: true,
       templateUrl: 'src/views/video.modal.html',
-      size: 'md',
+      size: 'lg',
       scope: $scope,
       controller: function($scope, $uibModalInstance) {
+        $scope.frame = frame;
+        $scope.videoUrl = videoUrl;
+        $scope.videoLoaded = false;
+        $scope.videoExt = 'video/' + $scope.videoUrl.slice(-3);
+
+        $scope.loaded = function() {
+          console.log('video loaded');
+          document.getElementById('video').currentTime = $scope.frame.frame_sec;
+          $scope.videoLoaded = true;
+        };
+
         $scope.cancel = function() {
           $uibModalInstance.dismiss('cancel');
         };
-      },
-      resolve: {
-        frame: function() {
-          return frame;
-        }
       }
     });
   };

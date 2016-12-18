@@ -1,14 +1,18 @@
 <div class="modal-header">
-  <h3 class="modal-title" id="modal-title">{{title}}</h3>
+  <h3 class="modal-title" id="modal-title">{{videoUrl}}</h3>
 </div>
 <div class="modal-body" id="modal-body">
-  <!--<ul>-->
-    <!--<li ng-repeat="item in $ctrl.items">-->
-      <!--<a href="#" ng-click="$event.preventDefault(); $ctrl.selected.item = item">{{ item }}</a>-->
-    <!--</li>-->
-  <!--</ul>-->
-  <!--Selected: <b>{{ $ctrl.selected.item }}</b>-->
-  хало
+  <div ng-show="videoLoaded" class="col-md-offset-1">
+    <video ng-onload="loaded()" id="video" width="640" height="360" controls>
+      <source src="{{'videos/'+videoUrl}}" type="{{videoExt}}"/>
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div ng-show="!videoLoaded" class="progress">
+    <div class="progress-bar progress-bar-striped active" role="progressbar" style="width: 100%">
+      <span>Video loading</span>
+    </div>
+  </div>
 </div>
 <div class="modal-footer">
   <button class="btn btn-warning" type="button" ng-click="cancel()">Close</button>
