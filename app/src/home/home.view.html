@@ -6,16 +6,17 @@
   <button ng-click="doSearch()" class="col-md-2 col-xs-2 btn btn-default">Search</button>
 </div>
 
-<div class="row searchResult" ng-repeat="result in results" ng-click="selectResult(result)">
+<div class="row searchResult" ng-repeat="result in results">
   <div>
     <h3 class="col-md-12 col-xs-12">{{$index+1}}: {{result.vid_path}}</h3>
   </div>
-  <div ng-repeat="frame in result.frames">
-      <img class="col-md-3 col-xs-3" src="{{'images/'+ frame.frame_path}}">
-
-    <!--<div class="col-md-6 col-xs-6">-->
-    <!--<p>{{result.frames[0].text}}</p>-->
-    <!--<p>was found at {{convertTime(result.frames[0].frame_sec) | date: 'mm:ss'}}</p>-->
-    <!--</div>-->
+  <div class="imageDiv col-md-12 col-xs-12">
+    <span ng-repeat="frame in result.frames" ng-click="selectFrame($parent.$index, $index)">
+        <img src="{{'images/'+ frame.frame_path}}">
+    </span>
+  </div>
+  <div class="col-md-6 col-xs-6">
+    <span class="row">Frame #{{selectedFrames[$index]+1}} was found at <b>{{convertTime(result.frames[selectedFrames[$index]].frame_sec) | date: 'mm:ss'}}</b></span>
+    <span class="row"><b>description</b>: {{result.frames[selectedFrames[$index]].text}}</span>
   </div>
 </div>

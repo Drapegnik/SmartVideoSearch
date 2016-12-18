@@ -90,6 +90,17 @@ body {
   }
 }
 
-.searchResult {
+.searchResult, .imageDiv {
   margin-bottom: 10px;
+}
+
+.imageDiv img {
+  box-shadow: 1px 1px 10px #999;
+  margin: 2px;
+  max-height: 100px;
+  cursor: pointer;
+  display:inline;
+  *display:inline;/* For IE7*/
+  *zoom:1;/* For IE7*/
+  vertical-align:top;
 }
