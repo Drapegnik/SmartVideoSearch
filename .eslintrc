@@ -1,0 +1,15 @@
+{
+  "extends": "eslint:recommended",
+  "globals": {
+    "angular": false,
+    "hackApp": true,
+    "go": false
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "no-console": "warn"
+  }
+}

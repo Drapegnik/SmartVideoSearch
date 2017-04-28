@@ -3,6 +3,16 @@
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.15.1.
 
-## Build & development
+* require server [from here](https://github.com/lybros/hackathon-flask-server)
 
-Run `grunt` for building and `grunt serve` for preview.
+## Run
+
+```
+npm i
+npm start
+```
+
+## Development
+
+* `npm run build`: build app
+* `npn run lint`: check code style
