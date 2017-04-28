@@ -9,7 +9,7 @@ Web application for smart search on pre-build text index with semantic video des
 [![ScreenShot](http://res.cloudinary.com/dzsjwgjii/image/upload/v1482098794/smart-video-search-2.png)](https://youtu.be/iiCt_-4yxIU)
 
 
-## Build & development
+* require server [from here](https://github.com/lybros/hackathon-flask-server)
 
 ### requirments
 
@@ -19,7 +19,6 @@ Web application for smart search on pre-build text index with semantic video des
 ### install
 ```
 npm i
-bower i
 ```
 
 set `apiUrl` and `elasticUrl` into `app/src/constants.js`, for example like:
