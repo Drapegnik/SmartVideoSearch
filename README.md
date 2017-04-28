@@ -4,6 +4,7 @@ Web application for smart search on pre-build text index with semantic video des
 
 ## demo
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/18d283314296431389723b194cdf1cd1)](https://www.codacy.com/app/Drapegnik/SmartVideoSearch?utm_source=github.com&utm_medium=referral&utm_content=Drapegnik/SmartVideoSearch&utm_campaign=badger)
 [![ScreenShot](http://res.cloudinary.com/dzsjwgjii/image/upload/v1482098941/smart-video-search-3.png)](https://youtu.be/Reno6eurbxg)
 
 [![ScreenShot](http://res.cloudinary.com/dzsjwgjii/image/upload/v1482098794/smart-video-search-2.png)](https://youtu.be/iiCt_-4yxIU)
